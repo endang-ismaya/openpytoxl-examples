@@ -5,6 +5,10 @@ from random import randint
 wb_name = "first_wb.xlsx"
 ws_name = "Conditional"
 wb = openpyxl.load_workbook(wb_name)
+
+if ws_name not in wb.sheetnames:
+    wb.create_sheet(ws_name)
+
 ws = wb[ws_name]
 
 rows = [("rand1", "rand2", "rand3", "rand4", "rand5")]
